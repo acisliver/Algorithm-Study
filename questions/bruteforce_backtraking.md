@@ -6,7 +6,7 @@
 
 ### 4. 완전탐색과 백트래킹의 각 관점에서 순열을 구하는 방법의 차이를 설명하시오.
 
-## 기본 문제
+### 기본 문제
 [[BOJ] N과 M(1)](https://www.acmicpc.net/problem/15649)
 [[BOJ] N과 M(2)](https://www.acmicpc.net/problem/15650)
 [[BOJ] 연산자 끼워넣기](https://www.acmicpc.net/problem/14888)
