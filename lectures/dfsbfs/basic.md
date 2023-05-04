@@ -53,3 +53,8 @@
 - 큐를 통해 구현
 - 가장 가까운 노드를 먼저 탐색
 - **최단거리를 구할 때 사용**
+
+## 기본 문제
+
+[[BOJ] 1260번: DFS와 BFS](https://www.acmicpc.net/problem/1260) <br>
+[[BOJ] 2178번: 미로 탐색](https://www.acmicpc.net/problem/2178)
