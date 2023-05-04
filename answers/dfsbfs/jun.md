@@ -35,8 +35,8 @@ DFS는 깊이 우선 탐색 방법으로 트리 구조의 데이터에서 노드
 
 재귀를 이용한 방법 - 방문 여부를 기록하기 위해 배열 visited를 사용하며, 배열 visited의 값을 false로 초기화한다. - 노드를 방문할 때마다 해당 노드의 visited 배열 값을 true로 변경한다. - 해당 노드(v)와 연결된 노드 중에 방문하지 않은 노드(node)이 있다면 방문하지 않은 노드(node)를 시작점으로 하여 DFS를 다시 시작한다.
 
-    ```
-    function dfs(graph, v, visited) {
+```javascript
+function dfs(graph, v, visited) {
     // 현재 노드를 방문 처리
     visited[v] = true;
     console.log(v);
@@ -44,45 +44,45 @@ DFS는 깊이 우선 탐색 방법으로 트리 구조의 데이터에서 노드
     // 현재 노드와 연결된 다른 노드를 재귀적으로 방문
     for (let node of graph[v]) {
         if (!visited[node]) {
-        dfs(graph, node, visited);
+            dfs(graph, node, visited);
         }
     }
-    }
+}
 
-    const graph = [[1, 2, 3], [0, 6], [0], [0, 4, 5], [3], [3], [1]];
-    const visited = Array(6).fill(false);
+const graph = [[1, 2, 3], [0, 6], [0], [0, 4, 5], [3], [3], [1]];
+const visited = Array(6).fill(false);
 
-    dfs(graph, 0, visited);
-    // 0 1 6 2 3 4 5
-    ```
+dfs(graph, 0, visited);
+// 0 1 6 2 3 4 5
+```
 
 스택을 이용한 방법 - 스택에 시작 노드를 push 한다. - 스택에서 노드를 pop하고 해당 노드(v)가 방문하지 않은 노드라면 방문처리 한다. - 노드(v)와 연결된 노드 중에서 방문하지 않은 노드(node)이 있다면 stack에 push 한다. - stack의 길이가 0이 될 때까지 2, 3번 과정을 반복한다.
 
-    ```
-    function dfs(graph, start, visited) {
+```javascript
+function dfs(graph, start, visited) {
     const stack = [];
     stack.push(start);
 
     while (stack.length) {
         let v = stack.pop();
         if (!visited[v]) {
-        console.log(v);
-        visited[v] = true;
+            console.log(v);
+            visited[v] = true;
 
-        for (let node of graph[v]) {
-            if (!visited[node]) {
-            stack.push(node);
+            for (let node of graph[v]) {
+                if (!visited[node]) {
+                    stack.push(node);
+                }
             }
         }
-        }
     }
-    }
-    const graph = [[1, 2, 4], [0, 5], [0, 5], [4], [0, 3], [1, 2]];
-    const visited = Array(7).fill(false);
+}
+const graph = [[1, 2, 4], [0, 5], [0, 5], [4], [0, 3], [1, 2]];
+const visited = Array(7).fill(false);
 
-    dfs(graph, 0, visited);
-    // 0 4 3 2 5 1
-    ```
+dfs(graph, 0, visited);
+// 0 4 3 2 5 1
+```
 
 ### 3. BFS를 구현하는 방법을 설명하시오.
 
@@ -94,8 +94,8 @@ BFS의 동작 방식
 큐에서 노드를 꺼내 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리한다.
 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
 
-    ```
-    function BFS(graph, start, visited) {
+```javascript
+function BFS(graph, start, visited) {
     const queue = new Queue();
     queue.push(start);
     visited[start] = true;
@@ -105,24 +105,24 @@ BFS의 동작 방식
         console.log(v);
 
         for (const node of graph[v]) {
-        if (!visited[node]) {
-            queue.push(node);
-            visited[node] = true;
-        }
+            if (!visited[node]) {
+                queue.push(node);
+                visited[node] = true;
+            }
         }
     }
-    }
+}
 
-    const graph = [[1, 2, 4], [0, 5], [0, 5], [4], [0, 3], [1, 2]];
-    const visited = Array(6).fill(false);
-    BFS(graph, 0, visited);
-    // 0 1 2 4 5 3
-    ```
+const graph = [[1, 2, 4], [0, 5], [0, 5], [4], [0, 3], [1, 2]];
+const visited = Array(6).fill(false);
+BFS(graph, 0, visited);
+// 0 1 2 4 5 3
+```
 
 큐 구현 코드
 
-    ```
-    class Queue {
+```javascript
+class Queue {
     constructor() {
         this.store = {};
         this.front = 0;
@@ -131,35 +131,35 @@ BFS의 동작 방식
 
     size() {
         if (this.store[this.rear] === undefined) {
-        return 0;
+            return 0;
         } else {
-        return this.rear - this.rear + 1;
+            return this.rear - this.rear + 1;
         }
     }
 
     push(value) {
         if (this.size() === 0) {
-        this.store['0'] = value;
+            this.store['0'] = value;
         } else {
-        this.rear += 1;
-        this.store[this.rear] = value;
+            this.rear += 1;
+            this.store[this.rear] = value;
         }
     }
 
     popleft() {
         let temp;
         if (this.front === this.rear) {
-        temp = this.store[this.front];
-        delete this.store[this.front];
-        this.front = 0;
-        this.rear = 0;
-        return temp;
+            temp = this.store[this.front];
+            delete this.store[this.front];
+            this.front = 0;
+            this.rear = 0;
+            return temp;
         } else {
-        temp = this.store[this.front];
-        delete this.store[this.front];
-        this.front += 1;
-        return temp;
+            temp = this.store[this.front];
+            delete this.store[this.front];
+            this.front += 1;
+            return temp;
         }
     }
-    }
-    ```
+}
+```
