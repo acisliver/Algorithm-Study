@@ -13,7 +13,7 @@
 | 진도 | 주제               |                                       질문                                        |                                         강의 자료                                         |     날짜     |
 |:--:|------------------|:-------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:----------:|
 |    | DFS & BFS        | [❓](https://github.com/acisliver/Algorithm-Study/blob/main/questions/dfsbfs.md) | [💡](https://github.com/acisliver/Algorithm-Study/blob/main/lectures/dfsbfs/basic.md) | 2023.04.16 |
-|    | 완전 탐색 & 백트래킹     |                                                                                 |                                                                                       |            |
+|    | 완전 탐색 & 백트래킹|[❓](https://github.com/acisliver/Algorithm-Study/blob/main/questions/bruteforce_backtraking.md)|[💡](https://github.com/acisliver/Algorithm-Study/blob/main/lectures/backtracking/basic.md)| 2023.05.06 |
 |    | 트리 순회            |                                                                                 |                                                                                       |            |
 |    | 시뮬레이션            |                                                                                 |                                                                                       |            |
 |    | DP               |                                                                                 |                                                                                       |            |
